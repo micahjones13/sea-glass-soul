@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-sea-teal: #009a82;
+  --color-sea-aqua: #11a39d;
+  --color-sea-navy: #1b4372;
+  --color-sea-navy-hover: #2d76bc;
+  --color-sea-text: #eeeeee;
+  --color-sea-gold: #d9a716;
+  --color-sea-ink: #121912;
+  --color-sea-glass: rgb(239 246 255 / 0.2);
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-script: 'Caveat', cursive;
+}
+
+@layer base {
+  html {
+    text-wrap: pretty;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    color: var(--color-sea-text);
+    background: linear-gradient(
+      0.25turn,
+      var(--color-sea-teal),
+      var(--color-sea-aqua),
+      var(--color-sea-navy)
+    );
+    background-attachment: fixed;
+  }
+
+  img {
+    border-radius: 0.5em;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass-pane {
+    padding: 0.25rem 0;
+    border-radius: 0.5em;
+    background-color: var(--color-sea-glass);
+    backdrop-filter: blur(10px);
+  }
+
+  .pill-button {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 0.75rem 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition:
+      transform 150ms ease-in-out,
+      box-shadow 150ms ease-in-out;
+  }
+
+  .pill-button:hover {
+    transform: translateY(-1px);
+  }
+}
